@@ -29,7 +29,7 @@ class LandingPage extends Component {
 
     async getTokens(){
         var tokens = {};
-        await fetch('http://localhost:4200/api/tokens/5f304d0f77cf3c0017ece550')
+        await fetch('http://sptfy-queue-api.herokuapp.com/api/tokens/5f304d0f77cf3c0017ece550')
         .then(response => response.json())
         .then(data =>{
             try{
