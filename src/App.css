@@ -1,5 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
 .App {
+  padding-top: 20vh;
   text-align: center;
+  background-color: black;
+  color: white;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.big-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: black;
+  color: white;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 }
 
 .App-logo {
@@ -36,3 +53,94 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+button {
+  border-radius: 20px;
+  border: none;
+  padding: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  outline: none;
+  
+}
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  .button-dark {
+    outline: none;
+
+      background: rgb(30, 215, 96);
+      color: rgb(255, 255, 255);
+      border: 1px solid rgb(30, 215, 96);
+      border-radius: 40px;
+      font-size: 20px;
+      letter-spacing: 1px;
+
+  }
+  .button-dark:hover {
+    outline: none;
+    background: lighten( rgb(30, 215, 96), 10% );
+  }
+
+
+
+.button-light {
+  outline: none;
+  background: none;
+  color: rgb(200, 200, 200);
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 40px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.button-light:hover {
+  outline: none;
+  border-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+
+.button-mid {
+  outline: none;
+  background: none;
+  color: gray;
+  border: 1px solid gray;
+  border-radius: 40px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.button-mid:hover {
+  outline: none;
+  border-color: red;
+  color: red;
+}
+
+.modal-text {
+  color: #191414;
+}
+
+.queue-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 28vh;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+  .search {
+    outline:none;
+    width: 65%;
+    
+  }
+  .search input {
+    border-radius: 18px;
+    outline:none;
+    width: 100%;
+    height: 100%;
+  }

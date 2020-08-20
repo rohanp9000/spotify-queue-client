@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './App.css';
-import Authpage from './components/authpage';
+import Authpage from './pages/authpage';
 
 import SpotifyWebApi from 'spotify-web-api-js';
-import LandingPage from './components/landingpage';
+import LandingPage from './pages/landingpage';
 const spotifyApi = new SpotifyWebApi();
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
     return (
 
         <Router>
-          <div className='center-wrap'>
+          <div className='big-page'>
           <Switch>
           <Route path="/authorize">
             <Authpage />

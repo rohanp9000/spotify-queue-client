@@ -168,20 +168,22 @@ class LandingPage extends Component {
         </div>
     }
         { this.state.loggedIn &&
-          <button onClick={() => this.getNowPlaying()}>
+          <button className='button-light' onClick={() => this.getNowPlaying()}>
             Check Now Playing
           </button>
         }    
         { !this.state.loggedIn &&
-          <button onClick={() => this.getTokens()}>
+          <button className='button-dark' onClick={() => this.getTokens()}>
             Get Token
           </button>
+          
         } 
         { this.state.loggedIn &&
-            <div>
-            <input type="text" value={this.state.toQueue.name} onChange={this.updateInputValue}/>
-
-            <button type="button" onClick={this.findSong} className="btn">Queue</button>
+            <div className= 'queue-content'>
+              <div className='search'>
+            <input type="text" placeholder="  Search" value={this.state.toQueue.name} onChange={this.updateInputValue}/>
+              </div>
+            <button type="button" onClick={this.findSong} className="button-dark" >Queue</button>
             </div>
         }       
 
@@ -197,7 +199,7 @@ class LandingPage extends Component {
         </div>
 } */}
     { this.state.showSongToUser &&
-    <Modal.Dialog>
+    <Modal.Dialog className='modal-text'>
     <Modal.Header closeButton>
         <Modal.Title>Queue Song</Modal.Title>
     </Modal.Header>
@@ -209,8 +211,8 @@ class LandingPage extends Component {
     </Modal.Body>
 
     <Modal.Footer>
-        <Button variant="secondary" onClick={this.resetQueueState}>No</Button>
-        <Button variant="primary" onClick={this.queueSong}>Yes, Queue</Button>
+        <button className="button-mid" onClick={this.resetQueueState}>No</button>
+        <button className='button-dark' onClick={this.queueSong}>Yes, Queue</button>
     </Modal.Footer>
     </Modal.Dialog>
 
