@@ -1,68 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Spotify Jukebox
 
-## Available Scripts
+This project was created  to enable song-queueing from any device through a web application. If you're looking for the corresponding [API](https://github.com/rohanp9000/spotify-queue-api) or [Authorization Server](https://github.com/rohanp9000/spotify-auth-server), those can be found at their respective hyperlinks.
 
-In the project directory, you can run:
+> What I used
 
-### `npm start`
+- [Spotify Web API](https://developer.spotify.com/documentation/web-api/)
+- [Create React App](https://github.com/facebook/create-react-app)
+- [Express](https://expressjs.com/)
+- [Reach Router](https://reach.tech/router)
+- [Styled Components](https://www.styled-components.com/)
+- [Heroku](https://heroku.com)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project was built with React and the Spotify API, using higher order components and styled components to somewhat mimic the UI/UX of spotify's music player.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Due to Spotify's API only allowing browser-based user authentication (and not through credentials), I wanted to avoid having to log into a singular spotify account on multiple devices to queue songs (i.e. logging into my spotify on my friends' phones). So, I wrote a backend that automatically refreshes an access token to my spotify account, and populates a database, which we're able to access from the front-end to access the queue, and request a song. You can read more about the back-end [here](https://github.com/rohanp9000/spotify-queue-api).
 
-### `npm test`
+The front-end requires a user to grab the token from the API (because it changes every hour), and then lets them enter the queue-ing portal. The flow looks something like this:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
+## Once the user navigates to the queue-ing site:  
+![gettoken](./snapshots/gettoken.png)
 
-### `npm run build`
+## Once the user succesfully recieves a token from the API:
+![tokenaccepted](./snapshots/tokenaccepted.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## User checks for song playing, but nothing is playing:
+![nosong](./snapshots/nosongplaying.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## User checks for song playing, and song is playing:
+![yessong](./snapshots/songplaying.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## The user is able to queue a song:
+![queuesong](./snapshots/queuesong.png)
 
-## Learn More
+## And just like that, it's been added to the queue!
+![success](./snapshots/success.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---
